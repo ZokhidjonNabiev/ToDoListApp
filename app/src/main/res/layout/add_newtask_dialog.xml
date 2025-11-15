@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="16dp"
+    android:paddingTop="16dp">
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Input the time"
+        style="@style/AddNewTaskDialog"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputTime"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="time"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Input the task"
+        style="@style/AddNewTaskDialog"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputTask"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginVertical="10dp"
+        >
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cancelAddingTaskDialogBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:layout_weight="1"
+            app:cornerRadius="8dp"
+            android:layout_marginEnd="16dp"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/addNewTaskDialogBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            android:layout_weight="1"
+            app:cornerRadius="8dp"
+            android:layout_marginStart="16dp"
+            />
+    </LinearLayout>
+</LinearLayout>
