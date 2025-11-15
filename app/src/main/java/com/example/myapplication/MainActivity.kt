@@ -1,6 +1,8 @@
 package com.example.myapplication
 
+import android.graphics.Color
 import android.os.Bundle
+import android.os.Handler
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
@@ -56,6 +58,21 @@ class MainActivity : AppCompatActivity() {
         binding.todoListRecyclerView.apply{
             this.adapter = todoListAdapter
             this.layoutManager = todoListLayoutManager
+        }
+
+        binding.swipeToDoList.setOnRefreshListener {
+            Handler().postDelayed({
+                val refreshedList = todoListData.toMutableList()
+                todoListAdapter.submitList(refreshedList)
+                todoListData = refreshedList
+                binding.swipeToDoList.isRefreshing = false
+            }, 5000)
+
+            binding.swipeToDoList.setColorSchemeColors(
+                Color.BLUE,
+                Color.RED
+            )
+
         }
         binding.addNewTaskBtn.setOnClickListener {
 

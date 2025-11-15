@@ -79,15 +79,22 @@
         app:layout_constraintStart_toStartOf="@id/searchLayout"
         app:layout_constraintTop_toBottomOf="@id/searchLayout" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/todoListRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginHorizontal="16dp"
-        app:layout_constraintStart_toStartOf="@+id/taskTitle"
-        app:layout_constraintTop_toBottomOf="@+id/taskTitle"
-        app:layout_constraintBottom_toTopOf="@id/bottomButtons"
-        />
+   <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+       android:id="@+id/swipeToDoList"
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:layout_marginHorizontal="16dp"
+       app:layout_constraintStart_toStartOf="@+id/taskTitle"
+       app:layout_constraintTop_toBottomOf="@+id/taskTitle"
+       app:layout_constraintBottom_toTopOf="@id/bottomButtons"
+       >
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/todoListRecyclerView"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+
+           />
+   </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bottomButtons"
